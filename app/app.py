@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 import os
+import markdown
 
 app = Flask(__name__)
 
 # Folder to store blog posts
-POSTS_DIR = 'posts'
-os.makedirs(POSTS_DIR, exist_ok=True)
+POSTS_DIR = os.path.join(os.path.dirname(__file__), 'posts')
+
 
 # Homepage: list blog post titles
 @app.route('/')
@@ -71,26 +72,14 @@ def post(slug):
     post_title = title_line.replace("Title:", "").strip()
     post_date = date_line.replace("Date:", "").strip()
 
-    return render_template('post.html', title=post_title, date=post_date, content=content)
+    content_html = markdown.markdown(content, extensions=['fenced_code', 'codehilite'])
+
+    return render_template('post.html', title=post_title, date=post_date, content=content_html)
 
 
 
 # About page
 @app.route('/about')
 def about():
-    with open('about.txt', 'r') as file:
-        about_text = file.read()
-    return render_template('about.html', content=about_text)
+    return render_template('about.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-from flask_frozen import Freezer
-
-freezer = Freezer(app)
-@freezer.register_generator
-def post():
-    import os
-    for filename in os.listdir(POSTS_DIR):
-        if filename.endswith(".md"):
-            yield {'slug': filename[:-3]} 

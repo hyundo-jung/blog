@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About Me</title>
+    <title>About Myself</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>About Me</h1>
-    <p>I'm computer science and mathematics student at Northwestern interested understanding how machines make decisions through logic and quantitative reasoning.</p>
-    <a href="/">Back to Home</a>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav>
+
+    <h1>About Myself</h1>
+    <p style="color: gray; font-size: 0.9em;">2005-09-14</p>
+
+    <p><p>Hello, my name is Hyundo Jung.</p></p>
 
     <footer class="site-footer">
         <div class="footer-inner">
@@ -32,5 +38,6 @@
             </div>
         </div>
     </footer>
+    
 </body>
 </html>
