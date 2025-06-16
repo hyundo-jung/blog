@@ -5,6 +5,8 @@ freezer = Freezer(app)
 
 app.config['FREEZER_DEFAULT_MIMETYPE'] = 'text/html'
 app.config['FREEZER_APPEND_SLASH'] = False
+app.config['FREEZER_RELATIVE_URLS'] = True
+
 
 
 @freezer.register_generator
