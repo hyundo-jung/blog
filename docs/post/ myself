@@ -2,12 +2,12 @@
 <html>
 <head>
     <title>About Myself</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
+        <a href="/blog">Home</a>
+        <a href="/blog/about.html">About</a>
     </nav>
 
     <h1>About Myself</h1>
