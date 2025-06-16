@@ -39,7 +39,7 @@ def index():
             posts.append({
                 'title': title,
                 'date': date_obj.strftime('%b %d, %Y'),
-                'filename': filename[:-3]  # remove .md
+                'filename': filename[:-3]
             })
 
     # Sort newest first
@@ -84,3 +84,13 @@ def about():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+from flask_frozen import Freezer
+
+freezer = Freezer(app)
+@freezer.register_generator
+def post():
+    import os
+    for filename in os.listdir(POSTS_DIR):
+        if filename.endswith(".md"):
+            yield {'slug': filename[:-3]} 

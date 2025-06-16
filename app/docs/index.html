@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>My Blog</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <nav>
@@ -11,12 +11,17 @@
     </nav>
     <!-- list posts here -->
     <ul style="margin-bottom: 25px;">
-        {% for post in posts %}
+        
             <li style="margin-bottom: 20px;">
-                <div style="color: gray;">{{ post.date }}</div>
-                <a href="{{ url_for('post', slug=post.filename) }}">{{ post.title }}</a>
+                <div style="color: gray;">Jun 15, 2025</div>
+                <a href="/post/first">test1</a>
             </li>
-        {% endfor %}
+        
+            <li style="margin-bottom: 20px;">
+                <div style="color: gray;">Sep 14, 2005</div>
+                <a href="/post/second">Test 2</a>
+            </li>
+        
     </ul>
 
     <footer class="site-footer">
