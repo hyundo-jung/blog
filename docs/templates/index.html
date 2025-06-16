@@ -2,26 +2,21 @@
 <html>
 <head>
     <title>My Blog</title>
-    <link rel="stylesheet" href="/blog/static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <nav>
-        <div><a href="/blog">Hyundo Jung</a></div>
-        <div><a href="/blog/about">About</a></div>
+        <div><a href="/">Hyundo Jung</a></div>
+        <div><a href="/about">About</a></div>
     </nav>
     <!-- list posts here -->
     <ul style="margin-bottom: 25px;">
-        
+        {% for post in posts %}
             <li style="margin-bottom: 20px;">
-                <div style="color: gray;">Jun 15, 2025</div>
-                <a href="/blog/post/first.html">test1</a>
+                <div style="color: gray;">{{ post.date }}</div>
+                    <a href="/post/{{ post.filename }}/">{{ post.title }}</a>
             </li>
-        
-            <li style="margin-bottom: 20px;">
-                <div style="color: gray;">Sep 14, 2005</div>
-                <a href="/blog/post/second.html">Test 2</a>
-            </li>
-        
+        {% endfor %}
     </ul>
 
     <footer class="site-footer">
