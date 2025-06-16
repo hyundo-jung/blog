@@ -1,0 +1,98 @@
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #333;
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1em;
+    margin: 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+nav a {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.site-footer {
+    border-top: 1px solid #ccc;
+    width: 100%;
+    background: white;
+    margin-top: 60px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 10px;
+    min-width: 150px;
+    line-height: 1.6;
+}
+
+.footer-column a {
+    color: #007bff;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-column .muted {
+    color: #999;
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 6px;
+    filter: grayscale(100%);
+}

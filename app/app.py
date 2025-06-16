@@ -6,7 +6,7 @@ import markdown
 app = Flask(__name__)
 
 # Folder to store blog posts
-POSTS_DIR = os.path.join(os.path.dirname(__file__), 'posts')
+POSTS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'posts'))
 
 
 # Homepage: list blog post titles
@@ -50,9 +50,13 @@ def index():
 
 
 # View a single post
-@app.route('/post/<slug>')
+@app.route('/posts/<slug>')
 def post(slug):
     filepath = os.path.join(POSTS_DIR, slug + '.md')
+
+    print(os.listdir(POSTS_DIR))
+    print(filepath)
+
     if not os.path.exists(filepath):
         return "Post not found", 404
 

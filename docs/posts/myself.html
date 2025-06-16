@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Blog</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>About Myself</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <nav>
-        <div><a href="/">Hyundo Jung</a></div>
-        <div><a href="/about.html">About</a></div>
+        <a href="../">Home</a>
+        <a href="../about.html">About</a>
     </nav>
-    <!-- list posts here -->
-    <ul style="margin-bottom: 25px;">
-        {% for post in posts %}
-            <li style="margin-bottom: 20px;">
-                <div style="color: gray;">{{ post.date }}</div>
-                    <a href="/posts/{{ post.filename }}">{{ post.title }}</a>
-                    
-            </li>
-        {% endfor %}
-    </ul>
+
+    <h1>About Myself</h1>
+    <p style="color: gray; font-size: 0.9em;">2005-09-14</p>
+
+    <p><p>Hello, my name is Hyundo Jung.</p></p>
 
     <footer class="site-footer">
         <div class="footer-inner">
@@ -43,5 +38,6 @@
             </div>
         </div>
     </footer>
+    
 </body>
 </html>
